@@ -1,0 +1,22 @@
+<!-- views/assignments/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignments</title>
+</head>
+<body>
+  <h1>Assignments</h1>
+  <a href="/assignments/new">Create New Assignment</a>
+  <ul>
+    <% assignments.forEach(assignment => { %>
+      <li>
+        <h2><%= assignment.title %></h2>
+        <p><%= assignment.description %></p>
+        <a href="/assignments/<%= assignment._id %>/edit">Edit</a>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>
